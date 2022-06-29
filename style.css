@@ -1,0 +1,261 @@
+/* Global Style */
+:root {
+	font-family: 'Cutive Mono', monospace;
+	--project-1: url(https://media-cdn.tripadvisor.com/media/photo-s/11/a6/1b/7a/scottish-whisky-tours.jpg)
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+/* Typography Media Queries */
+@media (min-width:350px) and (max-width:639px) {
+ html {
+  font-size: 0.9rem;
+ }
+
+	#welcome-section {
+	background-position: right 75% bottom 45%;
+}
+
+}
+
+@media (min-width:640px) and (max-width:1023px) {
+ html {
+  font-size: 1.0625rem;
+ }
+
+ #welcome-section {
+ background-position: right 95% bottom 45%;
+}
+}
+
+@media (min-width:1024px) and (max-width:1279px) {
+ html {
+  font-size: 1.125rem;
+ }
+
+ #welcome-section {
+ background-position: center center;
+}
+}
+
+/* Define max font size and viewport */
+@media (min-width:1280px) {
+ html {
+  font-size: 1.1875rem;
+ }
+
+ #welcome-section {
+ background-position: center center;
+}
+}
+
+
+
+
+/* Layout */
+nav {
+	position: absolute;
+	width: 100vw;
+	display: flex;
+	justify-content: flex-end;
+	align-content: stretch;
+	background-color: 	#708090;
+	height: 5vh;
+	padding: 1ch
+}
+
+.navlink {
+	color: white;
+	text-decoration: none;
+	padding: 0.5ch 1ch;
+	transition: background 300ms ease-in-out;
+}
+
+.navlink:hover {
+	background: black;
+}
+
+main {
+	position: absolute;
+	top: 5vh;
+}
+
+#welcome-section {
+	background-image: url(resources/headshot_portfolio.jpg);
+	background-color: #E2EFFF;
+ 	background-blend-mode: luminosity;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+/* 	USE MEDIA QUERY FOR POSITION */
+	display: flex;
+	justify-content: center;
+}
+
+.hero_title {
+	color: white;
+	position: absolute;
+	top: 15%;
+	margin: 0 50%;
+	min-width: 42ch;
+}
+
+.hero_title h1 {
+	font-weight: 200;
+	font-size: 3rem;
+	transition: all 400ms ease-in;
+}
+
+.hero_hidden {
+	display: none;
+	transition: all 400ms ease-in-out;
+}
+
+.hero_title:hover .hero_hidden{
+	display: inline-block;
+	position: absolute;
+	top: -50%;
+	min-width: 50%;
+}
+
+.hero_title:hover h1 {
+	color: gray;
+	opacity: 50%;
+}
+
+.em_text {
+	font-weight: 500;
+	font-size: 1.5rem;
+	color: white;
+}
+
+.hero_hidden {
+	font-size: 1rem;
+}
+
+#projects {
+	background-color: 	#708090;
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+	justify-content: center;
+}
+
+h2.project_title {
+	padding-left: 1ch;
+	font-weight: 100;
+	background-color: white;
+	color: black;
+	grid-column: 1 / -1;
+}
+
+.project-tile {
+	background-size: cover;
+	background-repeat: no repeat;
+	background-position: center center;
+	width: 250px;
+	height: 250px;
+	text-decoration: none;
+	margin: 1ch;
+}
+
+.project-tile > * {
+	transition: opacity 400ms ease-in-out;
+	color: transparent;
+}
+
+.project-tile:hover > * {
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	opacity: 100;
+}
+
+.project-tile:hover > h3 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	margin-top: 4ch;
+}
+
+#project-1  {
+	background-image: var(--project-1);
+	transition: all 500ms ease-in-out;
+}
+
+#project-1:hover {
+	background-color: #000000;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--project-1)
+}
+
+.project-tile h3{
+	opacity: 0;
+}
+
+.project-tile p{
+	opacity: 0;
+}
+
+#contact {
+	background: #818589;
+	height: 100vh;
+}
+
+.contact-tag {
+	padding-top: 25%;
+	text-align: center;
+	font-weight: 200;
+	color: white;
+	font-size: 3rem;
+}
+
+.logo_wrapper {
+	margin-top: 1ch;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo_wrapper .logo_text {
+	font-family: 'Cutive Mono', monospace;
+	font-weight: 100;
+	color: white;
+}
+
+.logo_wrapper i {
+	color: white;
+	margin: 1ch 2ch;
+}
+
+#profile-link, #li-link, #email-link {
+	transition-mode: ease-in-out;
+	transition-duration: 300ms;
+}
+
+#profile-link:hover {
+	background-color: #238636;
+}
+
+#li-link:hover {
+	background-color: #00A0DC;
+}
+
+#email-link:hover {
+	background-color: 	#DC143C;
+}
+
+footer {
+	background: #708090;
+	color: white;
+	height: 10vh;
+	border-top: 1ch solid white;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	font-size: 0.6rem;
+}
